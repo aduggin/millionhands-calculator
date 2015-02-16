@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Millionhands Calculator</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+<h1>Millionhands Calculator</h1>
+
+<p>Enter how many subscriber you have for each of the following:</p>
+
+<div class="calculator" id="calculator">
+    <div class="calculator__input">
+        <div class="form-group">
+            <label for="email">
+                Email list
+            </label>
+            <input type="text" id="email">
+        </div>
+        <div class="form-group">
+            <label for="facebook">
+                Facebook
+            </label>
+            <input type="text" id="facebook">
+        </div>
+        <div class="form-group">
+            <label for="instagram">
+                Instagram
+            </label>
+            <input type="text" id="instagram">
+        </div>
+        <div class="form-group">
+            <label for="twitter">
+                Twitter
+            </label>
+            <input type="text" id="twitter">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Calculate" id="calculate">
+        </div>
+        <p class="calculator__feedback is-hidden" id="feedback">You could make
+            £<span id="result"></span>
+        </p>
+    </div>
+</div>
+
+
+
+
+<script src="vendor/js/jquery.js"></script>
+<script src="js/CalculatorModel.js"></script>
+<script src="js/CalculatorController.js"></script>
+
+<script>
+    $(function(){
+        var controller = new CalculatorController({
+            container: '#calculator',
+            email: '#email',
+            facebook: '#facebook',
+            instagram: '#instagram',
+            twitter: '#twitter',
+            submit: 'input[type=submit]',
+            result: '#result'
+        });
+        controller.init();
+    });
+</script>
+
+</body>
+</html>
