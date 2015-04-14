@@ -2,65 +2,86 @@
 <html lang="en">
 <head>
     <title>Millionhands Calculator</title>
-    <link rel="stylesheet" href="styles/main.css"/>
+    <link href="//cdn.shopify.com/s/files/1/0188/5546/t/3/assets/style.css?9577557006790736315" rel="stylesheet" type="text/css"  media="all"  />
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-<h1>Millionhands Calculator</h1>
-
-<p>Enter how many subscriber you have for each of the following:</p>
 
 <div class="calculator" id="calculator">
     <div class="calculator__input">
-        <div class="form-group">
+        <p>
             <label for="email">
-                Email list
+                How many subscribers on your email list?
             </label>
             <input type="text" id="email">
-        </div>
-        <div class="form-group">
-            <label for="facebook">
-                Facebook
+        </p>
+        <p class="form-group">
+            <label for="facebook-fan">
+                How many fans on your Facebook Fan page?
             </label>
-            <input type="text" id="facebook">
-        </div>
-        <div class="form-group">
+            <input type="text" id="facebook-fan">
+        </p>
+        <p class="form-group">
+            <label for="facebook-dj">
+                How many fans on your Facebook DJ page/s?
+            </label>
+            <input type="text" id="facebook-dj">
+        </p>
+        <p class="form-group">
             <label for="instagram">
-                Instagram
+                How many followers on Instagram?
             </label>
             <input type="text" id="instagram">
-        </div>
-        <div class="form-group">
+        </p>
+        <p class="form-group">
             <label for="twitter">
-                Twitter
+                How many followers on Twitter?
             </label>
             <input type="text" id="twitter">
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Calculate" id="calculate">
-        </div>
-        <p class="calculator__feedback is-hidden" id="feedback">You could make
-            £<span id="result"></span>
         </p>
+
+        <input class="btn styled-submit" type="submit" id="calculate" value="Calculate">
     </div>
 </div>
 
+<script type="text/html" id="calculator-message-tmpl">
+    <div id="calculator-message">
+        <p>Thanks for filling in the MH_Bespoke calculator...</p>
 
+        <p>Superlative merchandise created by MH_Bespoke could not only further your label
+            and help connect with your fans, but you could also earn:</p>
 
+        <p>
+            £<span id="result-monthly"></span> monthly<br />
+            £<span id="result-annually"></span> annually
+        </p>
 
-<script src="vendor/js/jquery.js"></script>
+        <p>Get in touch and we'll show you how!</p>
+        <p>Email us: <a href="mailto:MH_Bespoke@Millionhands.net">MH_Bespoke@Millionhands.net</a></p>
+    </div>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 <script src="js/CalculatorModel.js"></script>
 <script src="js/CalculatorController.js"></script>
-
 <script>
     $(function(){
         var controller = new CalculatorController({
             container: '#calculator',
             email: '#email',
-            facebook: '#facebook',
+            facebookFan: '#facebook-fan',
+            facebookDj: '#facebook-dj',
             instagram: '#instagram',
             twitter: '#twitter',
-            submit: 'input[type=submit]',
-            result: '#result'
+            submit: '#calculate',
+            resultAnnually: '#result-annually',
+            resultMonthly: '#result-monthly',
+            messageTmpl: '#calculator-message-tmpl',
+            message: '#calculator-message'
         });
         controller.init();
     });
