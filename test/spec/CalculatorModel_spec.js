@@ -6,7 +6,8 @@ describe('CalculatorModel', function () {
   var calc;
   var data = {
     email: 17000,
-    facebook: 186000,
+    facebookFan: 93000,
+    facebookDj: 93000,
     instagram: 5000,
     twitter: 3000
   };
@@ -17,7 +18,7 @@ describe('CalculatorModel', function () {
 
   describe('getCalculation()', function () {
     it('returns a value', function () {
-      expect(calc.getCalculation()).toEqual(468720);
+      expect(calc.getCalculation()).toEqual(39060);
     });
   });
 });
