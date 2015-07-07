@@ -11,7 +11,6 @@ describe('CalculatorController', function () {
       container: '#calculator',
       email: '#email',
       facebookFan: '#facebook-fan',
-      facebookDj: '#facebook-dj',
       instagram: '#instagram',
       twitter: '#twitter',
       submit: 'input[type=submit]',
@@ -34,15 +33,13 @@ describe('CalculatorController', function () {
   describe('getFormData()', function () {
     it('extracts values from the form and returns them as an object', function () {
       $(view.email).val('17000');
-      $(view.facebookFan).val('93000');
-      $(view.facebookDj).val('93000');
+      $(view.facebookFan).val('39000');
       $(view.instagram).val('5000');
       $(view.twitter).val('3000');
 
       var expectedFormData = {
         email: 17000,
-        facebookFan: 93000,
-        facebookDj: 93000,
+        facebookFan: 39000,
         instagram: 5000,
         twitter: 3000
       };
@@ -55,7 +52,6 @@ describe('CalculatorController', function () {
         var expectedFormData = {
           email: 0,
           facebookFan: 0,
-          facebookDj: 0,
           instagram: 0,
           twitter: 0
         };
@@ -69,13 +65,12 @@ describe('CalculatorController', function () {
     it('gets the growthValue and interest from the model as an object', function () {
       var formData = {
         email: 17000,
-        facebookFan: 93000,
-        facebookDj: 93000,
+        facebookFan: 39000,
         instagram: 5000,
         twitter: 3000
       };
 
-      expect(controller.getCalculationsFromModel(formData)).toEqual(39060);
+      expect(controller.getCalculationsFromModel(formData)).toEqual(10060);
     });
   });
 });
