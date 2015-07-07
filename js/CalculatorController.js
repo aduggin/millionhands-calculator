@@ -10,7 +10,6 @@
     this.$container = $(view.container);
     this.$email = $(view.email);
     this.$facebookFan = $(view.facebookFan);
-    this.$facebookDj = $(view.facebookDj);
     this.$instagram = $(view.instagram);
     this.$twitter = $(view.twitter);
     this.$submit = $(view.submit);
@@ -49,14 +48,12 @@
   proto.getFormData = function () {
     var email = this.$container.find(this.$email).val() || 0;
     var facebookFan = this.$container.find(this.$facebookFan).val() || 0;
-    var facebookDj = this.$container.find(this.$facebookDj).val() || 0;
     var instagram = this.$container.find(this.$instagram).val() || 0;
     var twitter = this.$container.find(this.$twitter).val() || 0;
 
     var formData = {
       email:   parseInt(email),
       facebookFan: parseInt(facebookFan),
-      facebookDj: parseInt(facebookDj),
       instagram:  parseInt(instagram),
       twitter:  parseInt(twitter)
     };
